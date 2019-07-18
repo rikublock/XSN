@@ -22,6 +22,7 @@ class WalletModel;
 class AddressBookPage;
 class TPoSPage;
 class TransactionsDialog;
+class InformationPage;
 
 QT_BEGIN_NAMESPACE
 class QModelIndex;
@@ -70,6 +71,7 @@ private:
     AddressBookPage *usedReceivingAddressesPage;
     MasternodeList *masternodeListPage;
     TPoSPage* tposPage;
+    InformationPage* informationPage;
 
 
     TransactionsDialog* transactionsDialog;
@@ -91,7 +93,8 @@ public Q_SLOTS:
     void gotoMasternodePage();
     /** Switch to tpos page */
     void gotoTPoSPage();
-
+    /** Switch to information page */
+    void gotoInformationPage();
 
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */

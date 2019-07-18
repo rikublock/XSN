@@ -109,6 +109,7 @@ private:
     QAction *overviewAction;
     QAction *historyAction;
     QAction *masternodeAction;
+    QAction *informationAction;
     QAction *quitAction;
     QAction *sendCoinsAction;
     QAction *sendCoinsMenuAction;
@@ -247,9 +248,10 @@ private Q_SLOTS:
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
-
     /** Switch to tpos page */
     void gotoTPoSPage();
+    /** Switch to information page */
+    void gotoInformationPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");

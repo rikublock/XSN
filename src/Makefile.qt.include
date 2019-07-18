@@ -28,6 +28,7 @@ QT_FORMS_UI = \
   qt/forms/coincontroldialog.ui \
   qt/forms/editaddressdialog.ui \
   qt/forms/helpmessagedialog.ui \
+  qt/forms/informationpage.ui \
   qt/forms/intro.ui \
   qt/forms/modaloverlay.ui \
   qt/forms/masternodelist.ui \
@@ -60,6 +61,7 @@ QT_MOC_CPP = \
   qt/moc_csvmodelwriter.cpp \
   qt/moc_editaddressdialog.cpp \
   qt/moc_guiutil.cpp \
+  qt/moc_informationpage.cpp \
   qt/moc_intro.cpp \
   qt/moc_macdockiconhandler.cpp \
   qt/moc_macnotificationhandler.cpp \
@@ -133,6 +135,7 @@ BITCOIN_QT_H = \
   qt/editaddressdialog.h \
   qt/guiconstants.h \
   qt/guiutil.h \
+  qt/informationpage.h \
   qt/intro.h \
   qt/macdockiconhandler.h \
   qt/macnotificationhandler.h \
@@ -218,6 +221,7 @@ RES_ICONS = \
   qt/res/icons/light/tx_inout.png \
   qt/res/icons/light/lock_closed.png \
   qt/res/icons/light/lock_open.png \
+  qt/res/icons/light/info.png \
   qt/res/icons/light/key.png \
   qt/res/icons/light/filesave.png \
   qt/res/icons/light/debugwindow.png \
@@ -274,6 +278,7 @@ RES_ICONS = \
   qt/res/icons/dark/tx_inout.png \
   qt/res/icons/dark/lock_closed.png \
   qt/res/icons/dark/lock_open.png \
+  qt/res/icons/dark/info.png \
   qt/res/icons/dark/key.png \
   qt/res/icons/dark/filesave.png \
   qt/res/icons/dark/debugwindow.png \
@@ -332,6 +337,7 @@ BITCOIN_QT_CPP += \
   qt/coincontroldialog.cpp \
   qt/coincontroltreewidget.cpp \
   qt/editaddressdialog.cpp \
+  qt/informationpage.cpp \
   qt/masternodelist.cpp \
   qt/openuridialog.cpp \
   qt/overviewpage.cpp \
@@ -365,6 +371,8 @@ RES_IMAGES = \
   qt/res/images/pages/send/dark/send-button.png \
   qt/res/images/pages/send/dark/send-header.png \
   qt/res/images/pages/send/light/send-header.png \
+  qt/res/images/navigation-buttons/dark/information-activated.png \
+  qt/res/images/navigation-buttons/dark/information-button.png \
   qt/res/images/navigation-buttons/dark/masternodes-activated.png \
   qt/res/images/navigation-buttons/dark/masternodes-button.png \
   qt/res/images/navigation-buttons/dark/overview-activated.png \
@@ -396,6 +404,8 @@ RES_IMAGES = \
   qt/res/images/pages/overview/light/overview_box.png \
   qt/res/images/other/dark/logo_left_testnet.png \
   qt/res/images/other/dark/splash.png \
+  qt/res/images/navigation-buttons/light/information-activated.png \
+  qt/res/images/navigation-buttons/light/information-button.png \
   qt/res/images/navigation-buttons/light/masternodes-activated.png \
   qt/res/images/navigation-buttons/light/masternodes-button.png \
   qt/res/images/navigation-buttons/light/overview-activated.png \

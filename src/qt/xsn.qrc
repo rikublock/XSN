@@ -42,6 +42,7 @@
         <file alias="tx_inout">res/icons/light/tx_inout.png</file>
         <file alias="lock_closed">res/icons/light/lock_closed.png</file>
         <file alias="lock_open">res/icons/light/lock_open.png</file>
+        <file alias="info">res/icons/light/info.png</file>
         <file alias="key">res/icons/light/key.png</file>
         <file alias="filesave">res/icons/light/filesave.png</file>
         <file alias="debugwindow">res/icons/light/debugwindow.png</file>
@@ -100,6 +101,7 @@
         <file alias="tx_inout">res/icons/dark/tx_inout.png</file>
         <file alias="lock_closed">res/icons/dark/lock_closed.png</file>
         <file alias="lock_open">res/icons/dark/lock_open.png</file>
+        <file alias="info">res/icons/dark/info.png</file>
         <file alias="key">res/icons/dark/key.png</file>
         <file alias="filesave">res/icons/dark/filesave.png</file>
         <file alias="debugwindow">res/icons/dark/debugwindow.png</file>
@@ -131,6 +133,8 @@
         <file>res/images/pages/send/dark/send-button.png</file>
         <file>res/images/pages/send/dark/send-header.png</file>
         <file>res/images/pages/send/light/send-header.png</file>
+        <file>res/images/navigation-buttons/dark/information-activated.png</file>
+        <file>res/images/navigation-buttons/dark/information-button.png</file>
         <file>res/images/navigation-buttons/dark/masternodes-activated.png</file>
         <file>res/images/navigation-buttons/dark/masternodes-button.png</file>
         <file>res/images/navigation-buttons/dark/overview-activated.png</file>
@@ -162,6 +166,8 @@
         <file>res/images/pages/overview/light/overview_box.png</file>
         <file>res/images/other/dark/logo_left_testnet.png</file>
         <file>res/images/other/dark/splash.png</file>
+        <file>res/images/navigation-buttons/light/information-activated.png</file>
+        <file>res/images/navigation-buttons/light/information-button.png</file>
         <file>res/images/navigation-buttons/light/masternodes-activated.png</file>
         <file>res/images/navigation-buttons/light/masternodes-button.png</file>
         <file>res/images/navigation-buttons/light/overview-activated.png</file>

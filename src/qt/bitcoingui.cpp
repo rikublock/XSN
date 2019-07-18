@@ -154,6 +154,7 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
     overviewAction(0),
     historyAction(0),
     masternodeAction(0),
+    informationAction(0),
     quitAction(0),
     sendCoinsAction(0),
     sendCoinsMenuAction(0),
@@ -411,6 +412,19 @@ void BitcoinGUI::createActions()
 #endif
     tabGroup->addAction(historyAction);
 
+    informationAction = new QAction(QIcon(":/icons/" + theme + "/masternodes"), tr("&Information"), this);
+    informationAction->setStatusTip(tr("Recent information about the project"));
+    informationAction->setToolTip(informationAction->statusTip());
+    informationAction->setCheckable(true);
+
+#ifdef Q_OS_MAC
+    informationAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_6));
+#else
+    informationAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
+#endif
+
+    tabGroup->addAction(informationAction);
+
 #ifdef ENABLE_WALLET
     QSettings settings;
     if (settings.value("fShowMasternodesTab").toBool()) {
@@ -442,6 +456,8 @@ void BitcoinGUI::createActions()
     connect(receiveCoinsMenuAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
+    connect(informationAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(informationAction, SIGNAL(triggered()), this, SLOT(gotoInformationPage()));
 #endif // ENABLE_WALLET
 
     quitAction = new QAction(QIcon(":/icons/" + theme + "/quit"), tr("E&xit"), this);
@@ -655,6 +671,10 @@ void BitcoinGUI::createToolBarWidgets(QToolBar *toolbar)
 
     std::tie(label, tposTabAction) = CreateWidgetHelper("tpos", tr("Stake coins using trustless staking"));
 
+    shortcut = CreateShortcut(Qt::Key_6);
+
+    std::tie(label, informationAction) = CreateWidgetHelper("information", tr("Recent information about the project"));
+
     //    shortcut = CreateShortcut(Qt::Key_6);
 
     //    std::tie(label, ghostCoinsAction) = CreateWidgetHelper("stealthmode", tr("Stealth mode"));
@@ -670,7 +690,6 @@ void BitcoinGUI::createToolBarWidgets(QToolBar *toolbar)
         connect(masternodeAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
         connect(masternodeAction, SIGNAL(triggered()), this, SLOT(gotoMasternodePage()));
     }
-
 
     // These showNormalIfMinimized are needed because Send Coins and Receive Coins
     // can be triggered from the tray menu, and need to show the GUI to be useful.
@@ -688,6 +707,8 @@ void BitcoinGUI::createToolBarWidgets(QToolBar *toolbar)
     connect(ghostCoinsAction, SIGNAL(triggered()), this, SLOT(gotoStealthModePage()));
     connect(merchantAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(merchantAction, SIGNAL(triggered()), this, SLOT(gotoMerchantPage()));
+    connect(informationAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(informationAction, SIGNAL(triggered()), this, SLOT(gotoInformationPage()));
 #endif // ENABLE_WALLET
 }
 
@@ -888,6 +909,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     if (settings.value("fShowMasternodesTab").toBool() && masternodeAction) {
         masternodeAction->setEnabled(enabled);
     }
+    informationAction->setEnabled(enabled);
     encryptWalletAction->setEnabled(enabled);
     backupWalletAction->setEnabled(enabled);
     changePassphraseAction->setEnabled(enabled);
@@ -1067,6 +1089,12 @@ void BitcoinGUI::gotoMasternodePage()
         masternodeAction->setChecked(true);
         if (walletFrame) walletFrame->gotoMasternodePage();
     }
+}
+
+void BitcoinGUI::gotoInformationPage()
+{
+    informationAction->setChecked(true);
+    if (walletFrame) walletFrame->gotoInformationPage();
 }
 
 void BitcoinGUI::gotoReceiveCoinsPage()
